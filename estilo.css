@@ -1,0 +1,441 @@
+body {
+    background: linear-gradient(to bottom, #1E90FF, #00BFFF);
+    color: white;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* Importante para posicionar as esferas */
+
+}
+
+#background-container {
+    position: relative;
+    overflow: hidden;
+    /* Evita rolagem do fundo */
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.pinimg.com/564x/08/8a/59/088a59bc923d195f2721ddd01e949422.jpg');
+    /* Imagem do ShengLong */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    /* Ajuste a opacidade para melhor visualização */
+    z-index: -1;
+    /* Coloca o fundo atrás do conteúdo */
+}
+
+
+/* Estilização do menu */
+nav {
+    background: linear-gradient(to bottom, #FFA500, #FF4500);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Lista do menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Itens do menu */
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Links do menu */
+nav ul li a {
+    text-decoration: none;
+    /* estilo mais Dragon Ball */
+    font-family: "Saiyan Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #c71e18;
+    padding: 10px 15px;
+    border-radius: 50px;
+    background: radial-gradient(circle, #efd01e, #f64f12);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Efeito ao passar o mouse */
+nav ul li a:hover {
+    transform: scale(1.1);
+    background: radial-gradient(circle, #FFF700, #FF8C00);
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+}
+
+/* Estilizando como Esferas do Dragão */
+nav ul li a::before {
+    content: "⭐";
+    font-size: 16px;
+    color: red;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+
+.esfera {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #FFA500, #FF4500);
+    border-radius: 50%;
+    position: absolute;
+    animation: bounce 2s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.esfera:nth-child(1) {
+    top: 5%;
+    left: 30%;
+}
+
+.estrela {
+    position: relative;
+    width: 50px;
+    /* Ajuste para o tamanho ideal da estrela */
+    height: 50px;
+
+}
+
+.ponta {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    /* Cor da estrela */
+    border-bottom: 35px solid #c71e18;
+    filter: drop-shadow(2px 2px 5px rgba(255, 215, 0, 0.5));
+    transform-origin: center-bottom;
+    margin-left: 10px;
+
+}
+
+.estrela:hover .ponta {
+    border-bottom-color: yellow;
+    transition: 0.3s ease-in-out;
+}
+
+
+.ponta1 {
+    transform: rotate(0deg) translateY(-50%);
+}
+
+.ponta2 {
+    transform: rotate(72deg) translateY(-50%);
+}
+
+.ponta3 {
+    transform: rotate(144deg) translateY(-50%);
+}
+
+.ponta4 {
+    transform: rotate(216deg) translateY(-50%);
+}
+
+.ponta5 {
+    transform: rotate(288deg) translateY(-50%);
+}
+
+/* efeito de balanço na esfera do dragão */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
+    animation: glow 1.5s infinite alternate;
+}
+
+
+
+#first {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgba(255, 165, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+img {
+    width: 80%;
+    max-width: 600px;
+    border: 5px solid #FFD700;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#infoButton {
+    background: linear-gradient(45deg, #FFA500, #FF4500, #FFD700);
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: 'Bangers', cursive;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    animation: auraGlow 1.5s infinite alternate;
+    box-shadow: 0 0 10px #FFD700;
+    border: 2px solid rgba(0, 183, 255, 0.7);
+    width: 200px;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+/* Efeito de brilho ao passar o mouse */
+#infoButton:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #FFEC8B, #FFD700, #FFA500);
+    box-shadow: 0 0 30px #FFD700, 0 0 50px #FF4500, 0 0 70px #FFA500;
+}
+
+/* Criando os raios elétricos */
+#infoButton::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, rgb(28, 5, 232), transparent);
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: lightning 0.3s infinite alternate ease-in-out;
+}
+
+#infoButton::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: lightning 0.4s infinite alternate ease-in-out;
+}
+
+
+
+#infoButton .electric {
+    width: 35px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00B7FF, transparent);
+    opacity: 0;
+    animation: electricArc 0.15s infinite alternate ease-in-out;
+}
+
+/* Distribuindo os raios ao redor */
+#infoButton .electric:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-duration: 0.2s;
+}
+
+#infoButton .electric:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-duration: 0.25s;
+}
+
+#infoButton .electric:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-duration: 0.3s;
+}
+
+#infoButton .electric:nth-child(4) {
+    bottom: 5%;
+    right: 25%;
+    animation-duration: 0.35s;
+}
+
+#infoButton .electric:nth-child(5) {
+    top: 40%;
+    left: 50%;
+    animation-duration: 0.4s;
+}
+
+/* Relâmpagos pulsando */
+#infoButton::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: electricFlash 0.5s infinite alternate ease-in-out;
+}
+
+#infoButton::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: electricFlash 0.6s infinite alternate ease-in-out;
+}
+
+/* Borda de energia pulsante */
+#infoButton::before,
+#infoButton::after {
+    border: 2px solid rgba(0, 183, 255, 0.7);
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.7);
+}
+
+/* Brilho azul aumentando e diminuindo dinamicamente */
+@keyframes auraGlow {
+    0% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px rgba(0, 183, 255, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FF4500, 0 0 60px rgba(0, 183, 255, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px rgba(0, 183, 255, 0.7);
+    }
+}
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
+    }
+
+    to {
+        text-shadow: 0 0 15px #FFA500, 0 0 30px #FFEC8B;
+    }
+}
+
+@keyframes electric {
+    0% {
+        opacity: 0;
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-20px) scale(1);
+    }
+}
+
+@keyframes lightning {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(-10px) rotate(15deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0px) rotate(-10deg);
+    }
+}
+
+/* Ajustando a animação dos raios elétricos */
+@keyframes electricArc {
+    0% {
+        opacity: 0;
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(-5px) rotate(15deg) scale(1.1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(5px) rotate(-10deg) scale(1);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(-5px) rotate(10deg) scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(5px) rotate(-15deg) scale(1);
+    }
+}
+
+/* Mudança no brilho dos flashes */
+@keyframes electricFlash {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.3);
+    }
+}
